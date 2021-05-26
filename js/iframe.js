@@ -48,7 +48,7 @@ function loadApi(provider, videoId) {
     return new Promise(function (resolve, reject) {
 
         const scriptId = isYoutubeIframe ? "yt-iframe-api" : "vimeo-iframe-api";
-        if(document.querySelector('#' + scriptId)) resolve(videoId);
+        if(!!document.querySelector('#' + scriptId)) return resolve(videoId);
 
         const tag = document.createElement('script');
         tag.id = scriptId;
