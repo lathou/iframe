@@ -10,6 +10,7 @@ playBtn.addEventListener('click', () => {
 playBtnYt.addEventListener('click', () => loadApi('youtube'));
 
 function onYouTubeIframeAPIReady() {
+    //TODO: load the targeted video only
     const player = new YT.Player('yt-player', {
         height: '390',
         width: '640',
@@ -25,6 +26,7 @@ function onYouTubeIframeAPIReady() {
 
 playBtnVimeo.addEventListener('click', () => {
     loadApi('vimeo');
+    //TODO: Wait for the script to be ready (and remove setTimeout)
     setTimeout(createVimeoIframe, 1000)
 });
 
@@ -34,6 +36,7 @@ function createVimeoIframe() {
 }
 
 function loadApi(provider) {
+    //TODO: Only if script has not yet been inserted
     var tag = document.createElement('script');
 
     tag.src = provider === "youtube" ? "https://www.youtube.com/iframe_api" : "https://player.vimeo.com/api/player.js";
