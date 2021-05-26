@@ -25,7 +25,7 @@ function onYouTubeIframeAPIReady() {
 
 playBtnVimeo.addEventListener('click', () => {
     loadApi('vimeo');
-    setTimeout(createVimeoIframe, 100)
+    setTimeout(createVimeoIframe, 1000)
 });
 
 function createVimeoIframe() {
