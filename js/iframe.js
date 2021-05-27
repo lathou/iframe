@@ -24,7 +24,8 @@ function createYoutubeIframe(videoId) {
         videoId: videoId,
         playerVars: {
             'playsinline': 1,
-            'mute': 1
+            'mute': 1,
+            'autoplay': 1
         },
         events: {
             'onReady': (event) => {
