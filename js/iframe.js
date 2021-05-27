@@ -23,10 +23,15 @@ function createYoutubeIframe(videoId) {
         width: '640',
         videoId: videoId,
         playerVars: {
-            'playsinline': 1
+            'playsinline': 1,
+            'mute': 1
         },
         events: {
-            'onReady': (event) => event.target.playVideo()
+            'onReady': (event) => {
+                event.target.mute();
+                event.target.playVideo();
+                event.target.unMute();
+            }
         }
     });
 }
